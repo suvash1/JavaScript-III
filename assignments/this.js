@@ -64,13 +64,13 @@ console.log(ryan.speak.call('Denver'));
 function Person(name,location){
     this.name = name,
     this.location = location,
-    this.speak = function(){
-        return  `My name is ${this.name}. I am from ${this.location}`
+    this.speak = function(country){
+        return  `My name is ${this.name}. I am from ${country}`
     };
 }
 
 const ryan = new Person('Ryan','NYC');
 const sam = new Person('Sam','Boston');
-console.log(ryan.speak('USA'));
 
-console.log(ryan.speak.call(sam));
+console.log(ryan.speak('USA'));
+console.log(ryan.speak.call(sam,'USA'));
